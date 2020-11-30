@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+<link rel="stylesheet" href="style.css">
+<h1>Decimal to Binary Convertor</h1>
+<input type="number" id="decNum" value="">
+<h3>Enter the decimal number to be converted</h3>
+<button onclick="Convert()">Submit</button>
+<h3>The binary conversion of the above is</h3>
+<div id="result"></div>
+
+<script>
+function Convert() {
+  var num = document.getElementById("decNum").value;
+  var binary = new Array();
+  var i = 0;
+  while(num>0)
+  {
+     binary[i] = num%2;
+     num=Math.floor(num/2);
+     i++;
+
+  }
+  var result = binary.join('');
+  result = result.split("").reverse().join("");
+  document.getElementById("result").innerHTML=result;
+  
+  
+  
+}
+
+
+</script>
+
+</body>
+</html>
